@@ -1,8 +1,6 @@
 //  create an app object
 const triviaApp = {};
 
-// const question = (info.results[0].question);
-// console.log(question);
 //  create a function that will grab a random category of question
 triviaApp.getInfo = () => {
     $.ajax({
@@ -11,109 +9,102 @@ triviaApp.getInfo = () => {
             method: 'GET',
     
     }).then(function(info) {
-        //const q = info.question;
-        //triviaApp.getQuestion(info);
-        const question = (info.results[0].question);
-        // triviaApp.getQuestion(question);
-        // console.log(question);
+
+        // for(let i = 0; i < 6; i++) {
+        // let groupQuestion = (group) => {
+        const infoz = info.results;
+        console.log(infoz);
+        const results = info.results[0].question;
         triviaApp.getQuestion(info.results[0].question);
         triviaApp.getAnswer(info.results[0].correct_answer);
         triviaApp.getWrongAnswer(info.results[0].incorrect_answers);
-        
-        // console.log(info.results[0].question);
-        // console.log(info.results[0].correct_answer);
-        // console.log(info.results[0].incorrect_answers);
-      
+        // }
+        // }
+        console.log(results);
+
     });
 //  create a new function for a timer once the question is displayed
 }
 
+triviaApp.nextQuestion = () => {
+    // $('button').on('click', function(next) {
+        for (i = 0; i < 6; i++) {
+            info.results[i].question
+            console.log(i);
+        }
+    // });
+}
+
 //  create a function that will grab the question
 triviaApp.getQuestion = (question) => {
-    // console.log(question);
-    // $(".container").html('');
-    
+    //  displays question
     const displayQuestion = $('<h2>').text(question);
     $('.question').append(question);
-
-    // const displayAnswers = $('<p>').text(correct_answer);
-    // $('.answer').append(correct_answer);
-
-
-    // const question = (results[0].question);
-            // console.log(info.results[0].question);
-            // console.log(question);
-
-    // console.log(question);
+    // for (let i = 0; i < 6; i++) {
+    //     console.log([i]);
+    // }
 };
 
 triviaApp.getAnswer = (answerRight) => {
-    const displayAnswers = $('<p>').text(answerRight);
-    $('ul').append('<li>' + answerRight + '</li>');
+    //  shows right answer option
+    triviaApp.randomAnswers();
+    $('.answers').append('<label><input class="right" type="radio" name="answer">' + answerRight + '</label>');
     console.log(answerRight);
-
-
-    // let userChoice = $('li').on('click', function (j) {
-    //     // grab the note by ID
-    //     // console.log("something is clicked")
-    //     if (userChoice !== answerRight) {
-    //         console.log('correct');
-    //     } else {
-    //         console.log('wrong');
-    //     }
-    // });
-    triviaApp.userAnswer();
-
+    //  on click determines if right answer
+    let rightUserChoice = $('.right').on('click', function (answerRight) {
+        // console.log('correct');
+    })
 }
 
 triviaApp.getWrongAnswer = (answerWrong) => {
+    //  breaking apart 3 incorrect answers into separate answers
     answerWrong.forEach((answerBreakdown) =>{
-        const wrongAnswers = $('<p>').text(answerWrong);
-        $('ul').append('<li>' + answerBreakdown + '</li>');
-        let userChoice = $('li').on('click', function (a) {
-            console.log('wrong click');
+        triviaApp.randomAnswers();
+        
+        //  shows wrong answer options
+        $('.answers').append('<label><input class="wrong" type="radio" name="answer">' + answerBreakdown + '</label>');
+        //  on click determines if wrong answer
+        let wrongUserChoice = $('.wrong').on('click', function (answerWrong) {
+            // console.log('wrong click');
     //     // console.log(answerWrong);
     })
 })
-    triviaApp.randomAnswers();
     // triviaApp.userAnswer();
 }
 
-triviaApp.randomAnswers = (rando) => {
-    let answers = $('ul');
-    let list = $('ul li').length;
-    for (let i = 1; i < list; i++) {
-        let shuffle= Math.floor(Math.random() * list);
-        $('li', answers).eq(shuffle).appendTo(answers);
-    }
+triviaApp.randomAnswers = () => {
+    var questions = $("#answers");
 
-    // triviaApp.userAnswer();
+    questions.html(
+        questions.find("label").sort(function () {
+            return Math.round(Math.random()) - 0.5;
+        })
+    );
 }
 
+triviaApp.matchedAnswer
 
-//  create a new function that would evaluate the userSelection to the correct answer
-// triviaApp.userAnswer = (userChoice) => {
-//     // $('li').on('click', function (j){
-//     //     // grab the note by ID
-//     //     console.log("something is clicked")
-//     //     if(userChoice === answerRight) {
-//     //         console.log('correct');
-//     //     }
-//     // });
+// create a new function that would evaluate the userSelection to the correct answer
+triviaApp.userAnswer = (userChoice) => {
+    $('form').on('submit', function(e){
+        e.preventDefault();
+        console.log('submit');
+        const answerSelection = $('input[name=answer]:checked').val();   
+        const rightSelection = $('input:radio.right:checked').val();
 
-
-// }
-
-triviaApp.userAnswer = (choice) => {
-    let userChoice = $('li').on('click', function (j) {
-        // grab the note by ID
-        console.log("something is clicked")
-        if (userChoice !== choice) {
-            console.log('correct');
+        if (answerSelection === rightSelection){
+            console.log('yay');   
         } else {
             console.log('wrong');
         }
-});
+    })
+}
+
+triviaApp.teams
+
+triviaApp.userScore = () => {
+
+
 }
 
 
@@ -124,16 +115,12 @@ triviaApp.userAnswer = (choice) => {
 //  then start process again
 
 
-     
-
-
 //init function
 triviaApp.init = () => {
     triviaApp.getInfo();
     triviaApp.getQuestion();
-    // triviaApp.userAnswer();
-    // triviaApp.getAnswer();
-    // triviaApp.randomAnswers();
+    triviaApp.userAnswer();
+    triviaApp.nextQuestion();
 }
 
 //document ready function
