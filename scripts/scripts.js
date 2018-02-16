@@ -68,10 +68,14 @@ triviaApp.giveRightAnswer = (rightAnswer) => {
 }
 
 triviaApp.giveWrongAnswer = (wrongAnswer) => {
-    console.log(wrongAnswer)
-    $('.answers').empty();
+    wrongAnswer.forEach((answerBreakdown) => {
+        triviaApp.randomAnswers();
+
+        //  console.log(wrongAnswer)
+        //  $('.answers').empty();
     // $('.answers').append(`<h2>` + rightAnswer + `</h2>`);
-    $('.answers').append('<label><input class="right" type="radio" name="answer">' + wrongAnswer + '</label>');
+        $('.answers').append('<label><input class="wrong" type="radio" name="answer">' + answerBreakdown + '</label>');
+    });
     
 }
 
@@ -96,24 +100,24 @@ triviaApp.giveWrongAnswer = (wrongAnswer) => {
 //     })
 // }
 
-triviaApp.getWrongAnswer = (answerWrong) => {
-    //  breaking apart 3 incorrect answers into separate answers
-    answerWrong.forEach((answerBreakdown) =>{
-        triviaApp.randomAnswers();
+// triviaApp.getWrongAnswer = (answerWrong) => {
+//     //  breaking apart 3 incorrect answers into separate answers
+//     answerWrong.forEach((answerBreakdown) =>{
+//         triviaApp.randomAnswers();
         
-        //  shows wrong answer options
-        $('.answers').append('<label><input class="wrong" type="radio" name="answer">' + answerBreakdown + '</label>');
-        //  on click determines if wrong answer
-        let wrongUserChoice = $('.wrong').on('click', function (answerWrong) {
-            // console.log('wrong click');
-    //     // console.log(answerWrong);
-    })
-})
-    // triviaApp.userAnswer();
-}
+//         //  shows wrong answer options
+//         $('.answers').append('<label><input class="wrong" type="radio" name="answer">' + answerBreakdown + '</label>');
+//         //  on click determines if wrong answer
+//         let wrongUserChoice = $('.wrong').on('click', function (answerWrong) {
+//             // console.log('wrong click');
+//     //     // console.log(answerWrong);
+//     })
+// })
+//     // triviaApp.userAnswer();
+// }
 
 triviaApp.randomAnswers = () => {
-    var questions = $("#answers");
+    let questions = $("#answers");
 
     questions.html(
         questions.find("label").sort(function () {
