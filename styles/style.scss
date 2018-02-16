@@ -3,5 +3,40 @@
 @import "components/mixins";
 
 .correct {
-    
+    background: green;
+    // color: green;
+}
+
+.wrong {
+    background: red;
+    // color: red;
+}
+
+.active-player {
+    background: rgba(176,234,243,0.5);
+}
+
+// .right {
+//     // background: yellow;
+//     // color: yellow;
+// }
+
+input[type=radio] {
+    color: yellow;
+    background: yellow;
+}
+
+label{
+    // color: orange;
+    display: block;
+    // background: orange;
+}
+
+.players {
+    display: flex;
+    justify-content: space-between;
+}
+
+.results {
+   font-size:20px;
 }
