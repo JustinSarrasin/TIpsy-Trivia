@@ -16,17 +16,12 @@ triviaApp.getInfo = () => {
     
     }).then(function(info) {
         triviaApp.questions = info.results;
-        // triviaApp.getQuestion(info.results[0].question);
-        // triviaApp.getAnswer(info.results[0].correct_answer);
-        // triviaApp.getWrongAnswer(info.results[0].incorrect_answers);
         triviaApp.getQuestion(triviaApp.questions[triviaApp.counter].question);
         triviaApp.giveRightAnswer(triviaApp.questions[triviaApp.counter].correct_answer);
         triviaApp.giveWrongAnswer(triviaApp.questions[triviaApp.counter].incorrect_answers);
 
         triviaApp.setupQuestions();
-        
     });
-//  create a new function for a timer once the question is displayed
 }
 
 triviaApp.setupQuestions = () => {
@@ -34,18 +29,17 @@ triviaApp.setupQuestions = () => {
         //display a question
         triviaApp.timerId = setInterval(triviaApp.timer, 1000);
         triviaApp.counter = triviaApp.counter + 1;
-        triviaApp.countdown = 31;
+        triviaApp.countdown = 21;
 
         //if the counter hits a certain number, do nothing and finish
         //else keep showing questions
         triviaApp.getQuestion(triviaApp.questions[triviaApp.counter].question);
         triviaApp.giveRightAnswer(triviaApp.questions[triviaApp.counter].correct_answer);
         triviaApp.giveWrongAnswer(triviaApp.questions[triviaApp.counter].incorrect_answers);
-        //increase
     });
 }
 
-triviaApp.countdown = 31;
+triviaApp.countdown = 21;
 triviaApp.timer = function () {
     if (triviaApp.countdown === 0) {
         console.log('something');
@@ -63,19 +57,16 @@ triviaApp.timer = function () {
 
 //  create a function that will grab the question
 triviaApp.getQuestion = (question) => {
-    console.log(question)
-    
     //  displays question
     console.log(question);
     $('.question').empty();
     $('.question').append(question);
-    
 };
 
 triviaApp.giveRightAnswer = (rightAnswer) => {
     console.log(rightAnswer)
     $('.answers').empty();
-    $('.answers').append('<label><input class="right" type="radio" name="answer">' + rightAnswer + '</label>');
+    $('.answers').append('<label class="right"><input class="right" type="radio" name="answer">' + rightAnswer + '</label>');
 }
 
 triviaApp.giveWrongAnswer = (wrongAnswer) => {
@@ -84,7 +75,7 @@ triviaApp.giveWrongAnswer = (wrongAnswer) => {
 
         //  console.log(wrongAnswer)
         //  $('.answers').empty();
-        $('.answers').append('<label><input class="wrong" type="radio" name="answer">' + answerBreakdown + '</label>');
+        $('.answers').append('<label class="wrong"><input class="wrong" type="radio" name="answer">' + answerBreakdown + '</label>');
     });
 }
 
@@ -98,10 +89,13 @@ triviaApp.randomAnswers = () => {
     );
 }
 
-triviaApp.addPoint = function () {
+triviaApp.addPoint = function (pizza) {
     triviaApp.player['user1']++;
     $(`#player1`).empty();
-    $('#player1').append(`<h2>Score: ` + triviaApp.player['user1'] + `</h2>`);
+    $('#player1').append(`<h2>Score:` + triviaApp.player['user1'] + `/10 </h2>`);
+    // if(triviaApp.player['user1']++=== true){
+    //  return;
+    // }
 }
 
 triviaApp.addPoint2 = function () {
@@ -112,45 +106,67 @@ triviaApp.addPoint2 = function () {
 
 
 triviaApp.takeTurns = () => {
+
     $('form').on('submit', function (e) {
         e.preventDefault();
         clearInterval(triviaApp.timerId);
 
-
-        const answerSelection = $('input[name=answer]:checked').val();
-        const rightSelection = $('input:radio.right:checked').val();
-        // if the counter is even, player 1 makes a selection
-        // if the selection is correct, add point to user1 score
-        if (triviaApp.counter % 2 === 0) {
-            console.log('even')
-            if (answerSelection === rightSelection) {
-                triviaApp.addPoint();
+        $('.right').addClass('correct');
+        triviaApp.results();
+        
+        // let click = $('form').on('submit');
+        
+        // if(click = false){
+            
+            // } else true;
+            
+            const answerSelection = $('input[name=answer]:checked').val();
+            const rightSelection = $('input:radio.right:checked').val();
+            // if the counter is even, player 1 makes a selection
+            // if the selection is correct, add point to user1 score
+            if (triviaApp.counter % 2 === 0) {
                 
-
+                // $('<p>').addClass('active-player');
+            console.log('even')
+            // let bingo = (answerSelection === rightSelection);
+            if (answerSelection === rightSelection) {
+                triviaApp.addPoint();            
             } else {
-                console.log('wrong');
+                // console.log('wrong');
             }
 
         } else {
-            console.log('odd');
+            // console.log('odd');
             if (answerSelection === rightSelection) {
                 triviaApp.addPoint2();
-
             } else {
-                console.log('wrong');
+                // console.log('wrong');
             }
         }
     });
 }
 
+triviaApp.player = {
+    user1: 0,
+    user2: 0
+}
+
+triviaApp.results = () => {
+    if (triviaApp.player['user1'] === 10) {
+        $('.results').append(`player 1 wins`);
+        console.log('stuff');
+    } else {
+        // console.log('hey');
+    }
+
+    if (triviaApp.player['user2'] === 10) {
+        $('.results').append(`player 2 wins`);
+    } else {
+        return;
+    }
 
 
-
-//  create an object with two users to distinguish which team gets the point
-//  create a for in loop????? if === to correct answer. add a point to teams score
-//  once a team hits (x) of points, game over 
-//  then start process again
-
+}
 
 //init function
 triviaApp.init = () => {

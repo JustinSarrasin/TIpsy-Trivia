@@ -131,3 +131,30 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
+
+.correct {
+  background: green; }
+
+.wrong {
+  background: red; }
+
+.active-player {
+  background: rgba(176, 234, 243, 0.5); }
+
+input[type=radio] {
+  color: yellow;
+  background: yellow; }
+
+label {
+  display: block; }
+
+.players {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.results {
+  font-size: 20px; }
