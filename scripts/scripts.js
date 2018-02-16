@@ -58,6 +58,7 @@ triviaApp.timer = function () {
 //  create a function that will grab the question
 triviaApp.getQuestion = (question) => {
     //  displays question
+    console.log(question);
     $('.question').empty();
     $('.question').append(question);
 };
