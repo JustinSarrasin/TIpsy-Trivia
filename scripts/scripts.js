@@ -129,27 +129,83 @@ triviaApp.randomAnswers = () => {
 triviaApp.matchedAnswer
 
 // create a new function that would evaluate the userSelection to the correct answer
-triviaApp.userAnswer = (userChoice) => {
-    $('form').on('submit', function(e){
+// triviaApp.userAnswer = (userChoice) => {
+//     $('form').on('submit', function(e){
+//         e.preventDefault();
+//         console.log('submit');
+//         const answerSelection = $('input[name=answer]:checked').val();   
+//         const rightSelection = $('input:radio.right:checked').val();
+
+//         if (answerSelection === rightSelection){
+//             console.log('yay');   
+//         } else {
+//             console.log('wrong');
+//         }
+//     })
+// }
+
+// triviaApp.teams
+
+// triviaApp.userScore = () => {
+
+
+// }
+
+triviaApp.addPoint = function () {
+    triviaApp.player['user1']++;
+    $(`#player1`).empty();
+    $('#player1').append(`<h2>Score: ` + triviaApp.player['user1'] + `</h2>`);
+}
+
+triviaApp.addPoint2 = function () {
+    triviaApp.player['user2']++;
+    $(`#player2`).empty();
+    $('#player2').append(`<h2>Score: ` + triviaApp.player['user2'] + `</h2>`);
+
+}
+
+triviaApp.player = {
+    user1: 0,
+    user2: 0
+}
+
+triviaApp.takeTurns = () => {
+    $('form').on('submit', function (e) {
         e.preventDefault();
-        console.log('submit');
-        const answerSelection = $('input[name=answer]:checked').val();   
+
+        const answerSelection = $('input[name=answer]:checked').val();
         const rightSelection = $('input:radio.right:checked').val();
+        // if the counter is even, player 1 makes a selection
+        // if the selection is correct, add point to user1 score
+        if (triviaApp.counter % 2 === 0) {
+            console.log('even')
+            if (answerSelection === rightSelection) {
+                triviaApp.addPoint();
 
-        if (answerSelection === rightSelection){
-            console.log('yay');   
+            } else {
+                console.log('wrong');
+            }
+
         } else {
-            console.log('wrong');
+            console.log('odd');
+            if (answerSelection === rightSelection) {
+                triviaApp.addPoint2();
+
+            } else {
+                console.log('wrong');
+            }
         }
-    })
+    });
 }
 
-triviaApp.teams
+// triviaApp.player = {
+//     user1: 0,
+//     user2: 0
+// }
 
-triviaApp.userScore = () => {
 
-
-}
+// triviaApp.answerSelection = $('input[name=answer]:checked').val();
+// triviaApp.rightSelection = $('input:radio.right:checked').val();
 
 
 
@@ -163,7 +219,8 @@ triviaApp.userScore = () => {
 triviaApp.init = () => {
     triviaApp.getInfo();
     triviaApp.getQuestion();
-    triviaApp.userAnswer();
+    // triviaApp.userAnswer();
+    triviaApp.takeTurns();
     // triviaApp.nextQuestion();
 }
 
