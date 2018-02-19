@@ -2,41 +2,234 @@
 @import "components/variables";
 @import "components/mixins";
 
-.correct {
-    background: green;
-    // color: green;
+
+// General Styles
+html {
+    font-size:62.5%
 }
 
-.wrong {
-    background: red;
-    // color: red;
+.wrapper {
+    max-width:1000px;
+    width:80%;
+    margin:0 auto;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    background:rgba(0,0,0,0.3);
+    padding:15px;
+    border-radius:40px;
 }
 
-.active-player {
-    background: rgba(176,234,243,0.5);
+button {
+    @include button(white,$darkgrey);
 }
 
-// .right {
-//     // background: yellow;
-//     // color: yellow;
-// }
-
-input[type=radio] {
-    color: yellow;
-    background: yellow;
+// Start Screen 
+.startPage, .resultPage {
+    position:relative;
+    width:100%;
+    height:100vh;
+    background-image:linear-gradient(45deg, rgba(19, 19, 19, 0.5) 50%,rgba(160, 0, 0, 0.5) 50%), url('../assets/congruent_outline.png');
+    padding-top:50px;
+    text-align:center;
+    color:white;
+    h1 {
+        font-family: $fontHeader;
+        color:rgb(255, 255, 255);
+        font-weight:900;
+        font-size:12rem;
+        letter-spacing:7px;
+        margin:0;
+        text-transform: uppercase;
+        text-shadow: 0px 10px 0px rgb(31, 2, 2);
+        position:relative;
+        padding:20px;
+        line-height: 1;
+        z-index:2;
+        @media (max-width:648px) {
+            font-size:5rem;
+        }
+    }
+    h2 {
+        font-family: $fontBody;
+        letter-spacing:2px;
+        font-size:2rem;
+        font-weight:400;
+    }
+    p {
+    font-family: $fontBody;
+    letter-spacing:3px;
+    font-size:1.6rem;
+    text-transform: uppercase;
+    }
+    form {
+        letter-spacing:2px;
+        font-family: $fontBody;
+        font-size:1.8rem;
+        input {
+            margin:0 auto;  
+            color:white;
+            padding:10px 20px;
+            background:rgba(0,0,0,0.2);
+            border-bottom:1px solid black;
+            border-style:none;
+            text-align: center;
+            border-radius:10px;
+            margin:10px;
+            &::placeholder {
+                color:darken($lightgrey,30);
+            }
+        }
+    }
+    #start {
+        margin-top:20px;
+    }
 }
 
-label{
-    // color: orange;
-    display: block;
-    // background: orange;
-}
 
-.players {
+// Trivia Page
+.triviaPage {
+    text-align: center;
+    padding-top:30px;
+    background-image:url('../assets/congruent_outline.png');    
+    height:100vh;
+    position:relative;
+    color:#ffffff;
+    h1 {
+        font-family: $fontHeader;
+        font-weight:900;
+        font-size:3.7rem;
+        letter-spacing:7px;
+        margin:0;
+        text-transform: uppercase;
+        text-shadow: 0px 5px 0px rgb(0, 0, 0);
+        @media (max-width:648px) {
+            font-size:3rem;
+        }
+    }
+    h2 {
+        font-family: $fontHeader;
+        font-weight:900;
+        font-size:2rem;
+        letter-spacing:2px;
+        margin:0;
+        text-transform: uppercase;
+    }
+    h3 {
+        font-family:$fontHeader;
+        font-size:3rem;
+        margin:0;
+        @media (max-width:648px) {
+            font-size:2rem;
+        }
+    }
+    form {
+        padding-top:20px;
+        .question {
+            font-family: $fontBody;
+            text-transform: uppercase;
+            font-weight:900;
+            font-size:2rem;
+            letter-spacing:2px;
+            min-height:55px;
+            @media (max-width:648px) {
+                font-size:1.8rem;
+            }
+        }
+        label {
+            font-family: $fontBody;
+            letter-spacing:3px;
+            font-size:1.6rem;
+            text-transform: uppercase;
+            display: block;
+            padding:10px;
+            background:rgba(31, 31, 31, 0.7);
+            margin:5px 0;
+            border:1px solid black;
+            border-radius: 10px;
+            color:white;
+        }
+        input[type=radio] {
+            margin:10px;
+        }
+        .correct {
+            background: rgba(95, 168, 95, 0.5);
+        }
+        input[type=submit] {
+            @include button(white, $darkgrey);
+            margin:20px 0;
+        }
+    }
+    #nextQuestion {
+        @include button(white, $red);        
+    }
+    .players {
     display: flex;
     justify-content: space-between;
+    margin: 0 30px;
+    min-height:90px;
+    .first-player, .mycounter, .second-player {
+        padding-top:10px;
+        width:33%;
+        }
+    }
+    .teamOneName h2 {
+        font-size: 2.5rem;
+        animation-duration: 1s;
+        animation-name: pulse;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        @media (max-width:648px) {
+            font-size:2.2rem;
+        }
+    }
+    .teamOneNameNotActive h2 {
+        font-size: 2rem;
+        animation:none;
+    }
+    .teamTwoNameActive h2 {
+        font-size: 2.5rem;
+        @media (max-width:648px) {
+            font-size:2.2rem;
+        }
+    }   
 }
 
-.results {
-   font-size:20px;
+// Results Page
+.resultPage {
+    display:none;
+    .results {
+        font-size:20px;
+    }
 }
+
+
+// Animated Players
+.pulseAnimated {
+    animation-duration: 1s;
+    animation-name: pulse;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+
+/* Background pattern from Subtle Patterns designed by Atle Mo */
+/* Pulse animation from Animate.css by Daniel Eden. */
