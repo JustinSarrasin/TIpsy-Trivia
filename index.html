@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia Wars</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900|Raleway" rel="stylesheet">
+    <script src='https://use.fontawesome.com/4eee8b570b.js'></script>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" type="image/png" href="assets/Question_mark_alternate.png">
+</head>
+<body>
+
+    <!-- Start Page -->
+    <section class="startPage">
+        <div class="wrapper">
+            <h1>Trivia Wars</h1>
+            <h2 class="startPageHeader">Play against another team and beat them to 10.</h2>
+            <form>
+                <label class="visuallyhidden">First Player</label><input class = "insertName" id="inputOne" type="text" placeholder="Player One Name">
+                <label class="visuallyhidden">Second Player</label><input class = "insertName" id="inputTwo" type="text" placeholder="Player Two Name">
+            </form>
+            <button class="play" id="start">Let's Play</button>
+            <p>Designed By Justin Sarrasin & Thi Tran</p>
+        </div>
+    </section>
+
+    <!-- Trivia Page -->
+    <section class="triviaPage">
+        <div class="wrapper">
+            <h1>Trivia Wars</h1>
+            <form action="">
+                <div class="question"></div>
+                <div id="answers" class="answers"></div>
+                <input type="submit" value="Submit Answer">
+            </form>
+            <button class="play" id="nextQuestion">Next Question</button>
+            
+            <div class="players">
+                <div class="first-player">
+                    <div class="teamOneName"></div>
+                    <div class="score" id="player1">
+                    </div>
+                </div>
+                <div class="mycounter"></div>
+                <div class="second-player">
+                    <div class="teamTwoName"></div>
+                    <div class="score" id="player2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Page -->
+    <section class="resultPage">
+        <div class="wrapper">
+            <p class="results"></p>
+            <button class="reset" type="submit">Play Again?</button>
+        </div>
+    </section>
+
+
+
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
+    <script src="scripts/scripts.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>

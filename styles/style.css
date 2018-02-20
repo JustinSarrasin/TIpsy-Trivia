@@ -1,0 +1,445 @@
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
+  display: block; }
+
+audio, canvas, video {
+  display: inline-block; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+[hidden] {
+  display: none; }
+
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+a:focus {
+  outline: thin dotted; }
+
+a:active, a:hover {
+  outline: 0; }
+
+h1 {
+  font-size: 2em; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b, strong {
+  font-weight: 700; }
+
+dfn {
+  font-style: italic; }
+
+mark {
+  background: #ff0;
+  color: #000; }
+
+code, kbd, pre, samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+q {
+  quotes: \201C \201D \2018 \2019; }
+
+small {
+  font-size: 80%; }
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -.5em; }
+
+sub {
+  bottom: -.25em; }
+
+img {
+  border: 0; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: .35em .625em .75em; }
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0; }
+
+button, input {
+  line-height: normal; }
+
+button, html input[type=button], input[type=reset], input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+button[disabled], input[disabled] {
+  cursor: default; }
+
+input[type=checkbox], input[type=radio] {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0; }
+
+input[type=search] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box; }
+
+input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+textarea {
+  overflow: auto;
+  vertical-align: top; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body, figure {
+  margin: 0; }
+
+legend, button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: '';
+  clear: both;
+  height: 0; }
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.visuallyhidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden; }
+
+html {
+  font-size: 62.5%; }
+
+.wrapper {
+  max-width: 1000px;
+  width: 80%;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 40px; }
+
+button {
+  font-family: "Raleway", sans-serif;
+  color: white;
+  background: #313131;
+  letter-spacing: 0.45px;
+  font-size: 1.8rem;
+  padding: 15px 40px;
+  border-radius: 10px;
+  border-width: 2px;
+  border-color: transparent;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-box-shadow: 0px 8px 0px 0px #161616;
+  box-shadow: 0px 8px 0px 0px #161616; }
+  button:hover {
+    background: #4b4b4b; }
+  button:active {
+    -webkit-box-shadow: 0px 2px 0px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: 0px 2px 0px 0px rgba(50, 50, 50, 0.75);
+    -webkit-transform: translateY(4px);
+    -ms-transform: translateY(4px);
+    transform: translateY(4px); }
+
+.startPage, .resultPage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: -webkit-linear-gradient(45deg, rgba(19, 19, 19, 0.5) 50%, rgba(160, 0, 0, 0.5) 50%), url("../assets/congruent_outline.png");
+  background-image: -o-linear-gradient(45deg, rgba(19, 19, 19, 0.5) 50%, rgba(160, 0, 0, 0.5) 50%), url("../assets/congruent_outline.png");
+  background-image: linear-gradient(45deg, rgba(19, 19, 19, 0.5) 50%, rgba(160, 0, 0, 0.5) 50%), url("../assets/congruent_outline.png");
+  padding-top: 50px;
+  text-align: center;
+  color: white; }
+  .startPage h1, .resultPage h1 {
+    font-family: "Lato", serif;
+    color: white;
+    font-weight: 900;
+    font-size: 12rem;
+    letter-spacing: 7px;
+    margin: 0;
+    text-transform: uppercase;
+    text-shadow: 0px 10px 0px #1f0202;
+    position: relative;
+    padding: 20px;
+    line-height: 1;
+    z-index: 2; }
+    @media (max-width: 648px) {
+      .startPage h1, .resultPage h1 {
+        font-size: 5rem; } }
+  .startPage .startPageHeader, .resultPage .startPageHeader {
+    font-family: "Raleway", sans-serif;
+    letter-spacing: 2px;
+    font-size: 2rem;
+    font-weight: 400; }
+  .startPage p, .resultPage p {
+    font-family: "Raleway", sans-serif;
+    letter-spacing: 3px;
+    font-size: 1rem;
+    padding-top: 10px;
+    text-transform: uppercase; }
+  .startPage form, .resultPage form {
+    letter-spacing: 2px;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.8rem; }
+    .startPage form input, .resultPage form input {
+      margin: 0 auto;
+      color: white;
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.2);
+      border-bottom: 1px solid black;
+      border-style: none;
+      text-align: center;
+      border-radius: 10px;
+      margin: 10px; }
+      .startPage form input::-webkit-input-placeholder, .resultPage form input::-webkit-input-placeholder {
+        color: #8f8f8f; }
+      .startPage form input:-ms-input-placeholder, .resultPage form input:-ms-input-placeholder {
+        color: #8f8f8f; }
+      .startPage form input::-ms-input-placeholder, .resultPage form input::-ms-input-placeholder {
+        color: #8f8f8f; }
+      .startPage form input::placeholder, .resultPage form input::placeholder {
+        color: #8f8f8f; }
+  .startPage #start, .resultPage #start {
+    margin-top: 20px; }
+
+.triviaPage {
+  text-align: center;
+  padding-top: 30px;
+  background-image: url("../assets/congruent_outline.png");
+  height: 100vh;
+  position: relative;
+  color: #ffffff; }
+  .triviaPage h1 {
+    font-family: "Lato", serif;
+    font-weight: 900;
+    font-size: 3.7rem;
+    letter-spacing: 7px;
+    margin: 0;
+    text-transform: uppercase;
+    text-shadow: 0px 5px 0px black; }
+    @media (max-width: 648px) {
+      .triviaPage h1 {
+        font-size: 3rem; } }
+  .triviaPage h2 {
+    font-family: "Lato", serif;
+    font-weight: 900;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin: 0;
+    text-transform: uppercase; }
+  .triviaPage h3 {
+    font-family: "Lato", serif;
+    font-size: 3rem;
+    margin: 0; }
+    @media (max-width: 648px) {
+      .triviaPage h3 {
+        font-size: 2rem; } }
+  .triviaPage form {
+    padding-top: 20px; }
+    .triviaPage form .question {
+      font-family: "Raleway", sans-serif;
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 2rem;
+      letter-spacing: 2px;
+      min-height: 55px; }
+      @media (max-width: 648px) {
+        .triviaPage form .question {
+          font-size: 1.8rem; } }
+    .triviaPage form label {
+      font-family: "Raleway", sans-serif;
+      letter-spacing: 3px;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      display: block;
+      padding: 10px;
+      background: rgba(31, 31, 31, 0.7);
+      margin: 5px 0;
+      border: 1px solid black;
+      border-radius: 10px;
+      color: white; }
+    .triviaPage form input[type=radio] {
+      margin-right: 15px; }
+    .triviaPage form .correct {
+      background: rgba(102, 228, 102, 0.5); }
+    .triviaPage form input[type=submit] {
+      font-family: "Raleway", sans-serif;
+      color: white;
+      background: #f70000;
+      letter-spacing: 0.45px;
+      font-size: 1.8rem;
+      padding: 15px 40px;
+      border-radius: 10px;
+      border-width: 2px;
+      border-color: transparent;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      -webkit-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
+      -webkit-box-shadow: 0px 8px 0px 0px #161616;
+      box-shadow: 0px 8px 0px 0px #161616;
+      margin: 20px 0; }
+      .triviaPage form input[type=submit]:hover {
+        background: #ff2b2b; }
+      .triviaPage form input[type=submit]:active {
+        -webkit-box-shadow: 0px 2px 0px 0px rgba(50, 50, 50, 0.75);
+        box-shadow: 0px 2px 0px 0px rgba(50, 50, 50, 0.75);
+        -webkit-transform: translateY(4px);
+        -ms-transform: translateY(4px);
+        transform: translateY(4px); }
+  .triviaPage #nextQuestion {
+    font-family: "Raleway", sans-serif;
+    color: white;
+    background: #313131;
+    letter-spacing: 0.45px;
+    font-size: 1.8rem;
+    padding: 15px 40px;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: transparent;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-box-shadow: 0px 8px 0px 0px #161616;
+    box-shadow: 0px 8px 0px 0px #161616; }
+    .triviaPage #nextQuestion:hover {
+      background: #4b4b4b; }
+    .triviaPage #nextQuestion:active {
+      -webkit-box-shadow: 0px 2px 0px 0px rgba(50, 50, 50, 0.75);
+      box-shadow: 0px 2px 0px 0px rgba(50, 50, 50, 0.75);
+      -webkit-transform: translateY(4px);
+      -ms-transform: translateY(4px);
+      transform: translateY(4px); }
+  .triviaPage .players {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin: 0 30px;
+    min-height: 90px; }
+    .triviaPage .players .first-player, .triviaPage .players .mycounter, .triviaPage .players .second-player {
+      padding-top: 10px;
+      width: 33%; }
+  .triviaPage .teamOneName h2 {
+    font-size: 2.5rem;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite; }
+    @media (max-width: 648px) {
+      .triviaPage .teamOneName h2 {
+        font-size: 2.2rem; } }
+  .triviaPage .teamOneNameNotActive h2 {
+    font-size: 2rem;
+    -webkit-animation: none;
+    animation: none; }
+  .triviaPage .teamTwoNameActive h2 {
+    font-size: 2.5rem; }
+    @media (max-width: 648px) {
+      .triviaPage .teamTwoNameActive h2 {
+        font-size: 2.2rem; } }
+
+.resultPage {
+  display: none; }
+  .resultPage .results {
+    font-size: 20px; }
+  .resultPage button {
+    margin: 30px; }
+
+.answerHeader h2 {
+  font-size: 4rem; }
+
+.pulseAnimated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite; }
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05); }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05); }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+
+/* Background pattern from Subtle Patterns designed by Atle Mo */
+/* Pulse animation from Animate.css by Daniel Eden. */
