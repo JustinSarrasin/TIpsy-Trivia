@@ -25,7 +25,7 @@ button {
     @include button(white,$darkgrey);
 }
 
-// Start Screen 
+// Start Screen and results page
 .startPage, .resultPage {
     position:relative;
     width:100%;
@@ -51,7 +51,7 @@ button {
             font-size:5rem;
         }
     }
-    h2 {
+    .startPageHeader {
         font-family: $fontBody;
         letter-spacing:2px;
         font-size:2rem;
@@ -60,7 +60,8 @@ button {
     p {
     font-family: $fontBody;
     letter-spacing:3px;
-    font-size:1.6rem;
+    font-size:1rem;
+    padding-top: 10px;
     text-transform: uppercase;
     }
     form {
@@ -151,18 +152,18 @@ button {
             color:white;
         }
         input[type=radio] {
-            margin:10px;
+            margin-right:15px;
         }
         .correct {
-            background: rgba(95, 168, 95, 0.5);
+            background: rgba(102, 228, 102, 0.5);
         }
         input[type=submit] {
-            @include button(white, $darkgrey);
+            @include button(white, $red);
             margin:20px 0;
         }
     }
     #nextQuestion {
-        @include button(white, $red);        
+        @include button(white, $darkgrey);        
     }
     .players {
     display: flex;
@@ -202,6 +203,13 @@ button {
     .results {
         font-size:20px;
     }
+    button{
+        margin: 30px;
+    }
+}
+
+.answerHeader h2 {
+    font-size: 4rem;
 }
 
 

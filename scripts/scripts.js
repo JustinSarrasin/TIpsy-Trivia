@@ -66,6 +66,7 @@ triviaApp.countdown = 21;
 triviaApp.timer = function () {
     if (triviaApp.countdown === 0) {
         clearInterval(triviaApp.timerId);
+        swal("Oh No!!", "Out Of Time")
     } else {
         triviaApp.countdown--;
         $('.mycounter').html(`<h3>` + triviaApp.countdown + `</h3>`);
@@ -169,12 +170,12 @@ triviaApp.insertName = () => {
 // Displays the winner when score reaches 10
 triviaApp.results = () => {
     if (triviaApp.player['user1'] === 9) {
-        $('.results').append(`<h2>Player one wins</h2>`);
+        $('.results').append(`<h2 class="answerHeader">Player one wins!!!</h2>`);
         $('.triviaPage').hide();
         $('.resultPage').show('resultPage');
     } 
     if (triviaApp.player['user2'] === 9) {
-        $('.results').append(`<h2> Player two wins</h2>`);        
+        $('.results').append(`<h2 class="answerHeader"> Player two wins!!!</h2>`);        
         $('.resultPage').show('resultPage');   
         $('.triviaPage').hide();             
     } 
@@ -199,3 +200,6 @@ triviaApp.init = () => {
 $(function(){
     triviaApp.init();
 });
+
+
+//Questions provided https://opentdb.com/ API

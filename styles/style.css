@@ -215,7 +215,7 @@ button {
     @media (max-width: 648px) {
       .startPage h1, .resultPage h1 {
         font-size: 5rem; } }
-  .startPage h2, .resultPage h2 {
+  .startPage .startPageHeader, .resultPage .startPageHeader {
     font-family: "Raleway", sans-serif;
     letter-spacing: 2px;
     font-size: 2rem;
@@ -223,7 +223,8 @@ button {
   .startPage p, .resultPage p {
     font-family: "Raleway", sans-serif;
     letter-spacing: 3px;
-    font-size: 1.6rem;
+    font-size: 1rem;
+    padding-top: 10px;
     text-transform: uppercase; }
   .startPage form, .resultPage form {
     letter-spacing: 2px;
@@ -307,13 +308,13 @@ button {
       border-radius: 10px;
       color: white; }
     .triviaPage form input[type=radio] {
-      margin: 10px; }
+      margin-right: 15px; }
     .triviaPage form .correct {
-      background: rgba(95, 168, 95, 0.5); }
+      background: rgba(102, 228, 102, 0.5); }
     .triviaPage form input[type=submit] {
       font-family: "Raleway", sans-serif;
       color: white;
-      background: #313131;
+      background: #f70000;
       letter-spacing: 0.45px;
       font-size: 1.8rem;
       padding: 15px 40px;
@@ -330,7 +331,7 @@ button {
       box-shadow: 0px 8px 0px 0px #161616;
       margin: 20px 0; }
       .triviaPage form input[type=submit]:hover {
-        background: #4b4b4b; }
+        background: #ff2b2b; }
       .triviaPage form input[type=submit]:active {
         -webkit-box-shadow: 0px 2px 0px 0px rgba(50, 50, 50, 0.75);
         box-shadow: 0px 2px 0px 0px rgba(50, 50, 50, 0.75);
@@ -340,7 +341,7 @@ button {
   .triviaPage #nextQuestion {
     font-family: "Raleway", sans-serif;
     color: white;
-    background: #f70000;
+    background: #313131;
     letter-spacing: 0.45px;
     font-size: 1.8rem;
     padding: 15px 40px;
@@ -356,7 +357,7 @@ button {
     -webkit-box-shadow: 0px 8px 0px 0px #161616;
     box-shadow: 0px 8px 0px 0px #161616; }
     .triviaPage #nextQuestion:hover {
-      background: #ff2b2b; }
+      background: #4b4b4b; }
     .triviaPage #nextQuestion:active {
       -webkit-box-shadow: 0px 2px 0px 0px rgba(50, 50, 50, 0.75);
       box-shadow: 0px 2px 0px 0px rgba(50, 50, 50, 0.75);
@@ -402,6 +403,11 @@ button {
   display: none; }
   .resultPage .results {
     font-size: 20px; }
+  .resultPage button {
+    margin: 30px; }
+
+.answerHeader h2 {
+  font-size: 4rem; }
 
 .pulseAnimated {
   -webkit-animation-duration: 1s;
