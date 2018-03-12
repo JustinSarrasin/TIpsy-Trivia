@@ -10,6 +10,8 @@ triviaApp.player = {
     user2: 0
 }
 
+triviaApp.btnClicked = true;
+
 // Start page
 triviaApp.start = () => {
     $('#start').on('click', function () {
@@ -51,6 +53,9 @@ triviaApp.setupQuestions = () => {
         triviaApp.timerId = setInterval(triviaApp.timer, 1000);
         triviaApp.counter = triviaApp.counter + 1;
         triviaApp.countdown = 21;
+
+        triviaApp.btnClicked = true;
+
 
         //if the counter hits a certain number, do nothing and finish
         //else keep showing questions
@@ -139,11 +144,17 @@ triviaApp.takeTurns = () => {
         // if the selection is correct, add point to user1 score
         if (triviaApp.counter % 2 === 0) {                        
             if (answerSelection === rightSelection && IsChecked) {
-                triviaApp.addPoint();            
-            } 
+                if (triviaApp.btnClicked) {
+                    triviaApp.btnClicked = false;
+                    triviaApp.addPoint();         
+                }            
+            }
         } else {            
             if (answerSelection === rightSelection && IsChecked) {
-                triviaApp.addPoint2();
+                if (triviaApp.btnClicked) {
+                    triviaApp.btnClicked = false;
+                    triviaApp.addPoint2();
+                }                
             } 
         }
     });

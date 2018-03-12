@@ -19,6 +19,9 @@ html {
     background:rgba(0,0,0,0.3);
     padding:15px;
     border-radius:40px;
+    @media (max-width: 420px) {
+        width:95%;
+    }
 }
 
 button {
@@ -150,6 +153,7 @@ button {
             border:1px solid black;
             border-radius: 10px;
             color:white;
+            text-align:left;
         }
         input[type=radio] {
             margin-right:15px;
@@ -181,6 +185,7 @@ button {
         animation-name: pulse;
         animation-fill-mode: both;
         animation-iteration-count: infinite;
+        color:#ff2b2b;
         @media (max-width:648px) {
             font-size:2.2rem;
         }
@@ -188,9 +193,11 @@ button {
     .teamOneNameNotActive h2 {
         font-size: 2rem;
         animation:none;
+        color:white;
     }
     .teamTwoNameActive h2 {
         font-size: 2.5rem;
+        color:#ff2b2b;
         @media (max-width:648px) {
             font-size:2.2rem;
         }
