@@ -161,6 +161,9 @@ html {
   background: rgba(0, 0, 0, 0.3);
   padding: 15px;
   border-radius: 40px; }
+  @media (max-width: 420px) {
+    .wrapper {
+      width: 95%; } }
 
 button {
   font-family: "Raleway", sans-serif;
@@ -306,7 +309,8 @@ button {
       margin: 5px 0;
       border: 1px solid black;
       border-radius: 10px;
-      color: white; }
+      color: white;
+      text-align: left; }
     .triviaPage form input[type=radio] {
       margin-right: 15px; }
     .triviaPage form .correct {
@@ -385,16 +389,19 @@ button {
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
     -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite; }
+    animation-iteration-count: infinite;
+    color: #ff2b2b; }
     @media (max-width: 648px) {
       .triviaPage .teamOneName h2 {
         font-size: 2.2rem; } }
   .triviaPage .teamOneNameNotActive h2 {
     font-size: 2rem;
     -webkit-animation: none;
-    animation: none; }
+    animation: none;
+    color: white; }
   .triviaPage .teamTwoNameActive h2 {
-    font-size: 2.5rem; }
+    font-size: 2.5rem;
+    color: #ff2b2b; }
     @media (max-width: 648px) {
       .triviaPage .teamTwoNameActive h2 {
         font-size: 2.2rem; } }
