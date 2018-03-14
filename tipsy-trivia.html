@@ -7,8 +7,8 @@
     <title>Trivia Wars</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:400,900|Raleway" rel="stylesheet">
     <script src='https://use.fontawesome.com/4eee8b570b.js'></script>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="shortcut icon" type="image/png" href="assets/Question_mark_alternate.png">
+    <link rel="stylesheet" href="tipsy-trivia/styles/style.css">
+    <link rel="shortcut icon" type="image/png" href="tipsy-trivia/assets/Question_mark_alternate.png">
 </head>
 <body>
 
@@ -30,9 +30,11 @@
     <section class="triviaPage">
         <div class="wrapper">
             <h1>Trivia Wars</h1>
-            <form action="">
-                <div class="question"></div>
-                <div id="answers" class="answers"></div>
+            <form>
+                <div class="container">
+                    <div class="question"></div>
+                    <div id="answers" class="answers"></div>
+                </div>
                 <input type="submit" value="Submit Answer">
             </form>
             <button class="play" id="nextQuestion">Next Question</button>
@@ -63,7 +65,7 @@
 
 
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
-    <script src="scripts/scripts.js"></script>
+    <script src="tipsy-trivia/scripts/scripts.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>

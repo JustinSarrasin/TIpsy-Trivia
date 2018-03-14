@@ -128,6 +128,9 @@ button {
             font-size:2rem;
         }
     }
+    .container {
+        min-height:260px;
+    }
     form {
         padding-top:20px;
         .question {
@@ -139,6 +142,11 @@ button {
             min-height:55px;
             @media (max-width:648px) {
                 font-size:1.8rem;
+            }
+            @media (max-width: 480px) {
+                font-size:1.6rem;
+                margin-bottom:10px;
+                text-transform:none;
             }
         }
         label {
@@ -154,6 +162,10 @@ button {
             border-radius: 10px;
             color:white;
             text-align:left;
+            @media (max-width: 480px) {
+                text-transform:none;
+                padding:5px;
+            }
         }
         input[type=radio] {
             margin-right:15px;
@@ -163,7 +175,7 @@ button {
         }
         input[type=submit] {
             @include button(white, $red);
-            margin:20px 0;
+            margin:10px 0;
         }
     }
     #nextQuestion {
@@ -172,10 +184,13 @@ button {
     .players {
     display: flex;
     justify-content: space-between;
+    align-items:center;
     margin: 0 30px;
     min-height:90px;
+    @media (max-width: 480px) {
+        margin:0;
+    }
     .first-player, .mycounter, .second-player {
-        padding-top:10px;
         width:33%;
         }
     }
@@ -189,17 +204,26 @@ button {
         @media (max-width:648px) {
             font-size:2.2rem;
         }
+        @media (max-width: 480px) {
+            font-size:2rem;
+        }
     }
     .teamOneNameNotActive h2 {
         font-size: 2rem;
         animation:none;
         color:white;
+        @media (max-width: 480px) {
+            font-size:1.8rem;
+        }
     }
     .teamTwoNameActive h2 {
         font-size: 2.5rem;
         color:#ff2b2b;
         @media (max-width:648px) {
             font-size:2.2rem;
+        }
+        @media (max-width: 480px) {
+            font-size:2rem;
         }
     }   
 }
