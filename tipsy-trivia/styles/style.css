@@ -183,6 +183,10 @@ button {
   transition: all 0.5s;
   -webkit-box-shadow: 0px 8px 0px 0px #161616;
   box-shadow: 0px 8px 0px 0px #161616; }
+  @media (max-width: 480px) {
+    button {
+      font-size: 1.6rem;
+      padding: 10px 30px; } }
   button:hover {
     background: #4b4b4b; }
   button:active {
@@ -286,6 +290,8 @@ button {
     @media (max-width: 648px) {
       .triviaPage h3 {
         font-size: 2rem; } }
+  .triviaPage .container {
+    min-height: 260px; }
   .triviaPage form {
     padding-top: 20px; }
     .triviaPage form .question {
@@ -298,6 +304,11 @@ button {
       @media (max-width: 648px) {
         .triviaPage form .question {
           font-size: 1.8rem; } }
+      @media (max-width: 480px) {
+        .triviaPage form .question {
+          font-size: 1.6rem;
+          margin-bottom: 10px;
+          text-transform: none; } }
     .triviaPage form label {
       font-family: "Raleway", sans-serif;
       letter-spacing: 3px;
@@ -311,6 +322,10 @@ button {
       border-radius: 10px;
       color: white;
       text-align: left; }
+      @media (max-width: 480px) {
+        .triviaPage form label {
+          text-transform: none;
+          padding: 5px; } }
     .triviaPage form input[type=radio] {
       margin-right: 15px; }
     .triviaPage form .correct {
@@ -333,7 +348,11 @@ button {
       transition: all 0.5s;
       -webkit-box-shadow: 0px 8px 0px 0px #161616;
       box-shadow: 0px 8px 0px 0px #161616;
-      margin: 20px 0; }
+      margin: 10px 0; }
+      @media (max-width: 480px) {
+        .triviaPage form input[type=submit] {
+          font-size: 1.6rem;
+          padding: 10px 30px; } }
       .triviaPage form input[type=submit]:hover {
         background: #ff2b2b; }
       .triviaPage form input[type=submit]:active {
@@ -360,6 +379,10 @@ button {
     transition: all 0.5s;
     -webkit-box-shadow: 0px 8px 0px 0px #161616;
     box-shadow: 0px 8px 0px 0px #161616; }
+    @media (max-width: 480px) {
+      .triviaPage #nextQuestion {
+        font-size: 1.6rem;
+        padding: 10px 30px; } }
     .triviaPage #nextQuestion:hover {
       background: #4b4b4b; }
     .triviaPage #nextQuestion:active {
@@ -375,10 +398,15 @@ button {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     margin: 0 30px;
     min-height: 90px; }
+    @media (max-width: 480px) {
+      .triviaPage .players {
+        margin: 0; } }
     .triviaPage .players .first-player, .triviaPage .players .mycounter, .triviaPage .players .second-player {
-      padding-top: 10px;
       width: 33%; }
   .triviaPage .teamOneName h2 {
     font-size: 2.5rem;
@@ -394,17 +422,26 @@ button {
     @media (max-width: 648px) {
       .triviaPage .teamOneName h2 {
         font-size: 2.2rem; } }
+    @media (max-width: 480px) {
+      .triviaPage .teamOneName h2 {
+        font-size: 2rem; } }
   .triviaPage .teamOneNameNotActive h2 {
     font-size: 2rem;
     -webkit-animation: none;
     animation: none;
     color: white; }
+    @media (max-width: 480px) {
+      .triviaPage .teamOneNameNotActive h2 {
+        font-size: 1.8rem; } }
   .triviaPage .teamTwoNameActive h2 {
     font-size: 2.5rem;
     color: #ff2b2b; }
     @media (max-width: 648px) {
       .triviaPage .teamTwoNameActive h2 {
         font-size: 2.2rem; } }
+    @media (max-width: 480px) {
+      .triviaPage .teamTwoNameActive h2 {
+        font-size: 2rem; } }
 
 .resultPage {
   display: none; }
